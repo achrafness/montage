@@ -12,6 +12,7 @@ python3 build.py prep               # once: logo/grain/footage/teacher assets ->
 python3 build.py stills teachers 9 14.2 22.5   # look at frames before a full render
 python3 build.py all language       # -> bushra-ad/bushra-ad.mp4
 python3 build.py all teachers       # -> bushra-ad/teachers/bushra-teachers.mp4
+python3 build.py all school         # -> bushra-ad/school/bushra-school.mp4 (whole-school film)
 ```
 
 - `render` caches 2-second chunks in `work/out/seg*`. After editing a page, pass `--fresh`, or delete only the chunks covering the times you changed (chunk N = seconds 2N to 2N+2).
@@ -26,9 +27,10 @@ python3 build.py all teachers       # -> bushra-ad/teachers/bushra-teachers.mp4
 | `bushra-ad/build.py` | Single entry point: prep, music, render, mux |
 | `bushra-ad/work/ad.html` | Language-levels ad ("تعلّم اللغة بالمستويات", 6000 DA for 3 months) |
 | `bushra-ad/work/teachers.html` | Teachers ad ("وراء كل نجاح… أستاذ") |
+| `bushra-ad/work/school.html` | Whole-school film ("كل ما تحتاجه في مكان واحد"), built from the website's copy |
 | `bushra-ad/work/render.mjs` | Playwright renderer (stills or chunked video); the page is chosen by `AD_HTML` |
 | `bushra-ad/work/pops.mjs` | Prints the teacher-card pop times so the music lands on them |
-| `bushra-ad/work/music.py`, `music_teachers.py` | Soundtrack synths (96 BPM; D major and F major) |
+| `bushra-ad/work/music.py`, `music_teachers.py`, `music_school.py` | Soundtrack synths (96 BPM; D, F and G major) |
 | `bushra-ad/work/src/` | Original media from the client: walkthrough clips, teacher photos, logo |
 | `bushra-ad/brand-notes.md` | Brand facts, palette and verbatim site copy. Read this before writing any copy |
 | `bushra-ad/PROMPT.md` | Creative brief for the language ad |
@@ -58,7 +60,10 @@ python3 build.py all teachers       # -> bushra-ad/teachers/bushra-teachers.mp4
 
 - Font: Markazi Text for everything.
 - Palette: cream #FBF6EA, indigo #2B1666, gold #F5B82E.
-- Contacts: WhatsApp 0669 65 45 15 · Instagram @bushrasschool40 · Facebook Bushra's School · Khenchela.
+- Contacts: WhatsApp 0669 65 45 15 · Facebook Bushra's School · Khenchela.
+  - Instagram: the website links `instagram.com/bushraschool40`, but the client typed @bushrasschool40.
+    The school film uses the website's spelling; the language and teachers ads still use the client's. Confirm with the client and align all three.
+- Website source: GitHub `achrafness/Bushra-s-School` (Next.js). Copy is in `lib/i18n.ts`, contacts in `lib/contact.ts`, colours in `app/globals.css`, images in `public/assets/`. Take copy from there.
 - Language course: 6000 DA for 3 months, "تعلّم اللغة بالمستويات" (learn the language by levels).
   - The A1–B2 steps are an assumption still to confirm with the client.
 - **The teacher photos must never appear in the language ad.** Those teachers do not teach the language-level course.

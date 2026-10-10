@@ -6,6 +6,7 @@
     python3 build.py stills language 4.5 14.2 26.4   # check frames -> work/stills/<ad>/
     python3 build.py all language           # music + render + mux -> bushra-ad.mp4
     python3 build.py all teachers           # -> teachers/bushra-teachers.mp4
+    python3 build.py all school             # -> school/bushra-school.mp4 (the whole-school film)
     python3 build.py render teachers --fresh   # throw away cached 2 s chunks first
 
 Steps can also be run one by one: music, render, mux.
@@ -38,6 +39,9 @@ ADS = {
     'teachers': dict(html='teachers.html', music='music_teachers.py', raw='out/teach_mix_raw.wav',
                      bed_raw='out/teach_bed_raw.wav', seg='out/tseg', final=ROOT / 'teachers' / 'bushra-teachers.mp4',
                      poster=ROOT / 'teachers' / 'bushra-teachers.jpg', bed=ROOT / 'teachers' / 'bed_for_voice.wav'),
+    'school': dict(html='school.html', music='music_school.py', raw='out/school_mix_raw.wav',
+                   bed_raw='out/school_bed_raw.wav', seg='out/sseg', final=ROOT / 'school' / 'bushra-school.mp4',
+                   poster=ROOT / 'school' / 'bushra-school.jpg', bed=ROOT / 'school' / 'bed_for_voice.wav'),
 }
 
 # Footage clips used by the language ad: name -> (source, start s, length s)
@@ -51,6 +55,10 @@ FOOT_VF = ('crop=360:548:0:46,scale=800:1218:flags=lanczos,unsharp=5:5:0.6,eq=co
 TEACHERS = [('t_arabic', 250, 80, 740, False), ('t_blazer', 160, 0, 720, False), ('t_math', 40, 0, 540, False),
             ('t_glasses', 0, 0, 580, False), ('t_polo', 0, 40, 753, False), ('t_labcoat', 24, 6, 180, True),
             ('t_hat', 96, 70, 270, True)]
+
+# Round avatars for the whole-school film: face centre x, y and crop size, as fractions of each portrait.
+AVATARS = [(0.48, 0.16, 0.42), (0.52, 0.17, 0.40), (0.58, 0.37, 0.52), (0.46, 0.14, 0.36),
+           (0.48, 0.28, 0.50), (0.51, 0.22, 0.46), (0.42, 0.54, 0.40)]
 
 
 def run(cmd, **kw):
@@ -100,6 +108,17 @@ def prep():
         if not sharpen:
             c = ImageEnhance.Color(c).enhance(1.05)
         c.save(ASSETS / 'teach' / f'p{i}.jpg', quality=92)
+    (ASSETS / 'avatar').mkdir(exist_ok=True)
+    for i, (fx, fy, sz) in enumerate(AVATARS):
+        im = Image.open(ASSETS / 'teach' / f'p{i}.jpg')
+        W, H = im.size
+        d = min(sz * 1.45 * W, W)
+        x0 = max(0, min(W - d, fx * W - d / 2))
+        y0 = max(0, min(H - d, fy * H - d / 2))
+        im.crop((int(x0), int(y0), int(x0 + d), int(y0 + d))).resize((240, 240), Image.LANCZOS).save(ASSETS / 'avatar' / f'a{i}.jpg', quality=92)
+    # the website's hero photo (public/assets/hero-desk.png in achrafness/Bushra-s-School)
+    (ASSETS / 'site').mkdir(exist_ok=True)
+    Image.open(SRC / 'site_hero_desk.png').convert('RGB').resize((1080, 1080), Image.LANCZOS).save(ASSETS / 'site' / 'hero.jpg', quality=92)
     print('assets ready in', ASSETS)
 
 
@@ -122,6 +141,7 @@ def music(ad):
         (OUT / 'teach_pops.json').write_text(pops)
     run([sys.executable, '-I', WORK / cfg['music'], lines], cwd=WORK)
     loudnorm(WORK / cfg['raw'], OUT / f'{ad}_mix.wav', -14)       # finished ad
+    cfg['bed'].parent.mkdir(parents=True, exist_ok=True)
     loudnorm(WORK / cfg['bed_raw'], cfg['bed'], -20)             # bed that leaves room for a voice
     print('music ready:', OUT / f'{ad}_mix.wav', cfg['bed'])
 
