@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Bushra Language Ad</title>
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/400.css">
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/500.css">
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/600.css">
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/700.css">
+<style>
+  :root{
+    --cream:#FBF6EA; --cream2:#F4EBD6; --ink:#2B1666; --ink2:#1E0F4C; --soft:#6B5AA8;
+    --gold:#F5B82E; --gold2:#FFD978; --gold3:#D9970F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:var(--cream)}
+  body{font-family:'Markazi Text',serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  #stage{position:absolute;inset:0;overflow:hidden;background:var(--cream)}
+  #bgwarm{position:absolute;inset:0;background:radial-gradient(1200px 1300px at 50% 42%,#FFFBF1 0%,var(--cream) 55%,#F2E7CF 100%)}
+  #world{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
+  .abs{position:absolute}
+  .mask{position:absolute;overflow:hidden}
+  .ctr{left:0;right:0;text-align:center}
+  .nowrap{white-space:nowrap}
+  .lat{direction:ltr;unicode-bidi:isolate}
+  /* S1 */
+  .greet{font-weight:600;color:var(--soft);font-size:96px;line-height:1.2}
+  #hello{font-weight:700;font-size:250px;line-height:1.25;color:var(--ink)}
+  /* S2 */
+  #steps{position:absolute;left:0;top:0;width:1080px;height:1300px;overflow:hidden}
+  .step{position:absolute;border-radius:30px 30px 0 0;color:var(--cream);text-align:center;overflow:hidden}
+  .step .lv{font-weight:700;font-size:104px;line-height:1;margin-top:34px;direction:ltr}
+  .step .lvar{font-weight:600;font-size:52px;line-height:1.1;color:#D9D0F5;margin-top:6px}
+  .step .inmask{overflow:hidden;height:220px}
+  .title{font-weight:700;line-height:1.15}
+  /* S3 */
+  #panel{position:absolute;background:var(--ink)}
+  .card{position:absolute;background:var(--cream);overflow:hidden}
+  .card .nm{position:absolute;left:0;right:0;text-align:center;font-weight:700;font-size:80px;line-height:1.1;color:var(--ink)}
+  .card .gr{position:absolute;left:0;right:0;text-align:center;font-weight:500;font-size:48px;line-height:1.1;color:var(--soft);direction:ltr}
+  .card .flag{position:absolute;width:170px;height:170px;left:117.5px;top:40px}
+  .foot{position:absolute;inset:0}
+  .foot img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+  .chip{display:inline-block;background:var(--cream);color:var(--ink);font-weight:700;font-size:54px;line-height:1;padding:18px 34px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 30px rgba(20,8,60,.25)}
+  /* S5 */
+  .tk{position:absolute;left:0;right:0;text-align:center;color:var(--cream)}
+  .odo{display:inline-block;height:1em;overflow:hidden;vertical-align:top;width:.56em}
+  .odo span{display:block;height:1em;line-height:1em;text-align:center}
+  /* S6 */
+  #endbg{position:absolute;inset:0;background:radial-gradient(1100px 1200px at 50% 35%,#3A2185 0%,var(--ink) 50%,var(--ink2) 100%)}
+  .contact{display:flex;align-items:center;gap:16px;font-weight:600;font-size:50px;color:var(--cream);white-space:nowrap}
+  .contact svg{width:46px;height:46px;flex:none}
+  /* subtitles */
+  #sub{position:absolute;left:40px;right:40px;top:1530px;height:150px;overflow:hidden;text-align:center}
+  .pill{position:absolute;left:0;right:0;top:0;text-align:center}
+  .pill > b{display:inline-block;background:rgba(30,15,76,.93);color:var(--cream);font-weight:600;font-size:66px;line-height:1;padding:22px 48px 30px;border-radius:999px;white-space:nowrap;box-shadow:0 14px 40px rgba(20,8,60,.22)}
+  .w{display:inline-block}
+  #grain{position:absolute;left:0;top:0;pointer-events:none;opacity:.05;mix-blend-mode:soft-light}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bgwarm"></div>
+  <div id="endbg"></div>
+  <div id="world">
+    <!-- S1 greetings -->
+    <svg id="swash" class="abs" style="left:290px;top:1050px;width:500px;height:80px;overflow:visible" viewBox="0 0 500 80">
+      <path id="swashp" d="M10 40 C 120 70, 220 10, 330 38 S 460 60, 490 28" fill="none" stroke="#F5B82E" stroke-width="10" stroke-linecap="round" pathLength="1"/>
+    </svg>
+    <div id="m_hello" class="mask ctr" style="top:740px;height:330px"><div id="hello" class="nowrap">مرحبًا</div></div>
+    <div id="g0" class="abs lat greet" data-x="800" data-y="560" data-r="-5">Bonjour</div>
+    <div id="g1" class="abs lat greet" data-x="285" data-y="625" data-r="4">Hello</div>
+    <div id="g2" class="abs lat greet" data-x="290" data-y="1265" data-r="-4">Hola</div>
+    <div id="g3" class="abs lat greet" data-x="790" data-y="1330" data-r="5">Hallo</div>
+
+    <!-- S2 titles + steps -->
+    <div id="m_t1" class="mask ctr" style="top:300px;height:160px"><div id="t1" class="title" style="font-size:132px;color:var(--ink)">تعلّم اللغة</div></div>
+    <div id="m_t2" class="mask ctr" style="top:450px;height:190px"><div id="t2" class="title" style="font-size:160px;color:var(--gold3)">بالمستويات</div></div>
+    <div id="steps"></div>
+
+    <!-- S3 -->
+    <div id="m_t3" class="mask ctr" style="top:250px;height:170px"><div id="t3" class="title" style="font-size:140px;color:var(--ink)">أربع لغات</div></div>
+    <div id="panel"></div>
+    <div id="cards"></div>
+    <svg id="ring" class="abs" style="left:0;top:0;width:1080px;height:1920px;overflow:visible">
+      <rect id="ringr" fill="none" stroke="#F5B82E" stroke-width="7" pathLength="1"/>
+    </svg>
+
+    <!-- S5 ticket content (world) -->
+    <div id="ticket" class="abs" style="left:255px;top:450px;width:740px;height:700px">
+      <div class="mask" style="left:0;right:0;top:40px;height:150px"><div id="tk1" class="tk" style="font-weight:700;font-size:130px;line-height:1.1"><span class="lat">3</span> أشهر</div></div>
+      <div class="mask" style="left:0;right:0;top:178px;height:80px"><div id="tk2" class="tk" style="font-weight:500;font-size:60px;line-height:1.2;color:#D9D0F5">من الدراسة</div></div>
+      <svg class="abs" style="left:0;top:296px;width:740px;height:10px;overflow:visible"><line id="perf" x1="70" y1="5" x2="670" y2="5" stroke="#8C7CC8" stroke-width="5" stroke-dasharray="14 16" stroke-linecap="round"/></svg>
+      <div id="notchL" class="abs" style="left:-38px;top:263px;width:76px;height:76px;border-radius:50%;background:var(--cream)"></div>
+      <div id="notchR" class="abs" style="right:-38px;top:263px;width:76px;height:76px;border-radius:50%;background:var(--cream)"></div>
+      <div class="abs" style="left:0;right:0;top:330px;height:240px;display:flex;justify-content:center;align-items:flex-end;direction:ltr;gap:26px">
+        <div class="mask" style="position:relative;height:150px;width:120px"><div id="tkdj" style="position:absolute;bottom:0;right:0;font-weight:700;font-size:120px;line-height:1.25;color:var(--gold);direction:rtl">دج</div></div>
+        <div id="odo" style="font-weight:700;font-size:212px;line-height:1;color:var(--gold);height:212px;direction:ltr;white-space:nowrap"></div>
+      </div>
+      <div class="mask ctr" style="top:560px;height:90px"><div id="tk3" style="display:inline-block;font-weight:700;font-size:52px;line-height:1;padding:10px 36px 16px;border:4px solid var(--gold);border-radius:999px;color:var(--gold)">فقط</div></div>
+      <div id="shine" class="abs" style="left:0;top:0;width:740px;height:700px;overflow:hidden;pointer-events:none"><div id="shineb" class="abs" style="top:-200px;width:160px;height:1100px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,240,200,.16),rgba(255,255,255,0));transform:rotate(18deg)"></div></div>
+    </div>
+
+    <!-- S6 -->
+    <div id="flood" class="abs" style="border-radius:50%"></div>
+    <img id="crest" class="abs" src="assets/crest_indigo.png" style="width:300px">
+    <svg id="medring" class="abs" style="left:0;top:0;width:1080px;height:1920px;overflow:visible"><circle id="medringc" fill="none" stroke="#FBF6EA" stroke-width="4" pathLength="1"/></svg>
+    <div id="m_wm" class="mask ctr" style="top:858px;height:200px"><div id="wm" style="font-weight:700;font-size:168px;line-height:1.15;color:var(--cream)">مدرسة بشرى</div></div>
+    <div id="m_wl" class="mask ctr" style="top:1050px;height:90px"><img id="wl" src="assets/wordmark_cream.png" style="height:80px;display:inline-block"></div>
+    <div id="m_cta" class="mask ctr" style="top:1150px;height:140px"><div id="cta" style="display:inline-block;background:var(--gold);color:var(--ink2);font-weight:700;font-size:74px;line-height:1;padding:20px 64px 30px;border-radius:999px">سجّل الآن</div></div>
+    <div id="m_c1" class="mask" style="left:0;right:0;top:1300px;height:80px"><div id="c1" style="display:flex;justify-content:center;gap:60px">
+      <div class="contact"><svg viewBox="0 0 24 24" fill="#F5B82E"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg><span class="lat">0669 65 45 15</span></div>
+      <div class="contact"><svg viewBox="0 0 24 24" fill="#F5B82E"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>خنشلة</span></div>
+    </div></div>
+    <div id="m_c2" class="mask" style="left:0;right:0;top:1385px;height:80px"><div id="c2" style="display:flex;justify-content:center;gap:56px">
+      <div class="contact"><svg viewBox="0 0 24 24" fill="none" stroke="#F5B82E" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#F5B82E" stroke="none"/></svg><span class="lat">@bushrasschool40</span></div>
+      <div class="contact"><svg viewBox="0 0 24 24" fill="#F5B82E"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4V14h2.7v8z"/></svg><span class="lat">Bushra's School</span></div>
+    </div></div>
+
+    <!-- dot (top of world) -->
+    <div id="dot" class="abs" style="left:0;top:0;width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE39A,#F5B82E 55%,#D9970F)"></div>
+  </div>
+
+  <div id="sub"></div>
+  <img id="grain" src="assets/grain.png" width="1080" height="1920">
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const prog=(t,a,d)=>clamp((t-a)/d);
+const eOutCubic=p=>1-Math.pow(1-p,3);
+const eInCubic=p=>p*p*p;
+const eInOut=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const eOutExpo=p=>p>=1?1:1-Math.pow(2,-10*p);
+const eInOutQuint=p=>p<.5?16*p*p*p*p*p:1-Math.pow(-2*p+2,5)/2;
+// closed-form damped spring step response (0 -> 1)
+function spring(t,f=2.1,z=0.52){ if(t<=0) return 0; const w=2*Math.PI*f, wd=w*Math.sqrt(1-z*z);
+  return 1-Math.exp(-z*w*t)*(Math.cos(wd*t)+(z*w/wd)*Math.sin(wd*t)); }
+const B=60/96;
+
+/* ---------------- camera ---------------- */
+const CAM=[ // t0,t1, [z,x,y] from -> to, ease
+  [0,4.9,[1.0,540,960],[1.05,540,960],eInOut],
+  [5.0,8.6,[1.05,540,960],[1.05,540,905],eInOut],
+  [8.75,13.5,[1.05,540,905],[1.10,600,860],eInOut],
+  [13.75,21.1,[1.10,600,860],[1.10,625,815],eInOut],
+  [21.25,25.6,[1.10,625,815],[1.18,625,800],eInOut],
+  [26.0,32.5,[1.0,540,960],[1.045,540,940],eInOut],
+];
+function cam(t){
+  let cur=CAM[0][2];
+  for(const [a,b,f,to,e] of CAM){ if(t>=a){ if(t<=b){const p=e(prog(t,a,b-a)); return [Math.exp(lerp(Math.log(f[0]),Math.log(to[0]),p)),lerp(f[1],to[1],p),lerp(f[2],to[2],p)];} cur=to; } }
+  return cur;
+}
+
+/* ---------------- helpers ---------------- */
+function rise(el,t,t0,dur=.7,dist=1.15,exitT=null,exitDur=.35,exitDir=-1){
+  // mask-line reveal: element sits in an overflow:hidden parent and rises from below
+  const p=eOutExpo(prog(t,t0,dur)); let y=(1-p)*dist*100;
+  if(exitT!==null && t>=exitT){ const q=eInCubic(prog(t,exitT,exitDur)); y=exitDir*q*dist*100; }
+  el.style.transform=`translateY(${y}%)`;
+}
+function setRect(el,r,rad){ el.style.left=r[0]+'px'; el.style.top=r[1]+'px'; el.style.width=r[2]+'px'; el.style.height=r[3]+'px'; if(rad!==undefined) el.style.borderRadius=rad+'px'; }
+const lerpRect=(a,b,p)=>a.map((v,i)=>lerp(v,b[i],p));
+const vis=(el,on)=>{ el.style.display=on?'':'none'; };
+
+/* ---------------- build steps ---------------- */
+const STEPS=[ // x, height, color, label, arabic, riseT
+  [779,235,'#4A35A0','A1','مبتدئ',5.0],
+  [553,345,'#3D2A8C','A2','أساسي',5.625],
+  [327,462,'#33207A','B1','متوسط',6.25],
+  [101,580,'#2B1666','B2','متقدّم',6.875],
+];
+const BASE=1300, SW=200;
+STEPS.forEach((s,i)=>{ const d=document.createElement('div'); d.className='step'; d.id='st'+i;
+  d.style.cssText+=`left:${s[0]}px;width:${SW}px;top:${BASE-s[1]}px;height:${s[1]+40}px;background:linear-gradient(180deg,${s[2]},${s[2]}ee)`;
+  d.innerHTML=`<div class="inmask"><div id="stl${i}"><div class="lv">${s[3]}</div><div class="lvar">${s[4]}</div></div></div>`; $('steps').appendChild(d); });
+const LAND=STEPS.map(s=>[s[0]+SW/2, BASE-s[1]-22, s[5]+0.36]);
+
+/* ---------------- build cards ---------------- */
+const PANEL=[110,440,900,900];
+const CARDS=[ // x,y, name, greet, flag, popT
+  [575,470,'الفرنسية','Bonjour','fr',9.375],
+  [140,470,'الإنجليزية','Hello','uk',10.0],
+  [575,905,'الإسبانية','Hola','es',10.625],
+  [140,905,'الألمانية','Hallo','de',11.25],
+];
+const CS=405;
+function flagSVG(k){
+  const c='<clipPath id="fc_'+k+'"><circle cx="50" cy="50" r="50"/></clipPath>';
+  let g='';
+  if(k==='fr') g='<rect x="0" y="0" width="34" height="100" fill="#1F4BB4"/><rect x="33" y="0" width="34" height="100" fill="#fff"/><rect x="66" y="0" width="34" height="100" fill="#E1343F"/>';
+  if(k==='es') g='<rect width="100" height="100" fill="#C8102E"/><rect y="25" width="100" height="50" fill="#FFC400"/>';
+  if(k==='de') g='<rect width="100" height="34" fill="#141414"/><rect y="33" width="100" height="34" fill="#DD1C1C"/><rect y="66" width="100" height="34" fill="#FFCE00"/>';
+  if(k==='uk') g='<rect width="100" height="100" fill="#1D3B8B"/><path d="M0 0L100 100M100 0L0 100" stroke="#fff" stroke-width="20"/><path d="M0 0L100 100M100 0L0 100" stroke="#D0202E" stroke-width="7"/><path d="M50 0V100M0 50H100" stroke="#fff" stroke-width="28"/><path d="M50 0V100M0 50H100" stroke="#D0202E" stroke-width="15"/>';
+  return `<svg viewBox="0 0 100 100" style="width:100%;height:100%;display:block"><defs>${c}</defs><g clip-path="url(#fc_${k})">${g}</g><circle cx="50" cy="50" r="49" fill="none" stroke="rgba(0,0,0,.08)" stroke-width="1.5"/></svg>`;
+}
+CARDS.forEach((c,i)=>{ const d=document.createElement('div'); d.className='card'; d.id='cd'+i;
+  d.innerHTML=`<div class="flag" id="fl${i}">${flagSVG(c[4])}</div>
+   <div class="mask" style="left:0;right:0;top:222px;height:100px"><div class="nm" id="nm${i}" style="position:relative">${c[2]}</div></div>
+   <div class="mask" style="left:0;right:0;top:318px;height:66px"><div class="gr" id="gr${i}" style="position:relative">${c[3]}</div></div>`;
+  if(i===0){ d.innerHTML+=`<div id="bigflag" class="abs" style="left:0;top:0;width:100%;height:100%;overflow:hidden"><div id="bigflagc" class="abs" style="border-radius:50%;overflow:hidden"><div style="display:flex;direction:ltr;width:100%;height:100%"><div style="flex:1;background:#1F4BB4"></div><div style="flex:1;background:#fff"></div><div style="flex:1;background:#E1343F"></div></div></div></div>
+     <div id="feet" class="abs foot" style="left:0;top:0;width:100%;height:100%;overflow:hidden"></div>
+     <svg id="revring" class="abs" style="left:0;top:0;width:100%;height:100%;overflow:visible;pointer-events:none"><circle id="revc" fill="none" stroke="#F5B82E" stroke-width="8"/></svg>
+     <div id="m_chip" class="mask" style="right:34px;top:34px;height:110px;width:700px;direction:rtl"></div>`; }
+  $('cards').appendChild(d); });
+
+/* footage */
+const CLIPS=[ // id, start, frames, reveal origin (window-local fraction)
+  ['c1',14.1,67,null],
+  ['c2',15.6,75,[0.15,0.25]],
+  ['c3',17.5,58,[0.9,0.55]],
+  ['c4',18.75,52,[0.5,1.0]],
+  ['c5',19.95,67,[0.1,0.0]],
+];
+const FEET=CLIPS.map((c,i)=>{ const im=document.createElement('img'); im.id='ft'+i; $('feet').appendChild(im); return im; });
+const CHIPS=[['أقسام مريحة',14.75],['جوّ هادئ للتعلّم',16.3],['متابعة مستمرة',17.9],['هنا في خنشلة',19.55]];
+CHIPS.forEach((c,i)=>{ const d=document.createElement('div'); d.className='abs'; d.id='chip'+i; d.style.cssText='right:0;top:0'; d.innerHTML=`<span class="chip">${c[0]}</span>`; $('m_chip').appendChild(d); });
+const WIN=[230,280,760,1060];
+const TICKET=[255,450,740,700];
+
+/* odometer: 6000 */
+const ODO=[6,0,0,0]; const ROLLS=[2,3,3,4];
+$('odo').innerHTML=ODO.map((d,i)=>{ let s=''; const n=ROLLS[i]*10+d; for(let k=0;k<=n;k++) s+=`<span>${k%10}</span>`; return `<div class="odo" style="width:.52em"><div id="od${i}">${s}</div></div>`; }).join('');
+
+/* subtitles */
+const SUBS=[
+  [0.35,2.45,'تخيّل أن تتكلّم لغةً جديدة'],
+  [2.6,4.6,'…بثقة'],
+  [5.15,6.95,'في مدرسة بشرى، تتعلّم اللغة'],
+  [7.1,8.9,'خطوة بخطوة… بالمستويات'],
+  [9.2,11.4,'الفرنسية، الإنجليزية'],
+  [11.55,13.7,'الإسبانية، والألمانية'],
+  [14.2,16.45,'أقسام مريحة، وجوّ هادئ'],
+  [16.6,18.6,'ومتابعة مستمرة'],
+  [18.75,21.0,'هنا في خنشلة'],
+  [21.5,23.6,'ثلاثة أشهر من الدراسة'],
+  [23.75,25.75,'بـ 6000 دج فقط'],
+  [26.6,28.5,'سجّل الآن'],
+  [28.65,32.5,'وابدأ رحلتك مع مدرسة بشرى'],
+];
+SUBS.forEach((s,i)=>{ const d=document.createElement('div'); d.className='pill'; d.id='sb'+i;
+  d.innerHTML='<b>'+s[2].split(' ').map((w,j)=>`<span class="mask" style="position:relative;display:inline-block;vertical-align:top;overflow:hidden;padding:0 2px"><span class="w" id="sw${i}_${j}">${w.replace('6000','<span class="lat">6000</span>')}</span></span>`).join(' ')+'</b>';
+  $('sub').appendChild(d); });
+
+/* ---------------- seek ---------------- */
+async function seek(t){
+  const [z,cx,cy]=cam(t);
+  $('world').style.transform=`translate(540px,960px) scale(${z}) translate(${-cx}px,${-cy}px)`;
+
+  /* ===== S1 ===== */
+  const s1=t<5.2;
+  vis($('m_hello'),s1); vis($('swash'),s1);
+  rise($('hello'),t,0.3,0.9,1.1,4.25,0.4,1);
+  // swash draws then retracts
+  const sw=eInOut(prog(t,1.0,0.8))-eInOut(prog(t,4.05,0.35));
+  $('swashp').style.strokeDasharray='1 1'; $('swashp').style.strokeDashoffset=(1-sw);
+  const GT=[0.94,1.56,2.19,2.81];
+  for(let i=0;i<4;i++){ const g=$('g'+i); const gx=+g.dataset.x, gy=+g.dataset.y, gr=+g.dataset.r;
+    const sp=spring(t-GT[i],1.9,.5); const conv=eInCubic(prog(t,4.3+i*0.07,0.42));
+    const x=lerp(gx,540,conv), y=lerp(gy,960,conv);
+    const sc=lerp(0.6+0.4*sp,0.02,conv);
+    // drift so nothing is ever static
+    const dr=(t-GT[i])*6*(i%2?1:-1);
+    g.style.left='0px'; g.style.top='0px';
+    g.style.transform=`translate(${x}px,${y+ (1-clamp(sp))*60 + (conv?0:dr*0.3)}px) translate(-50%,-50%) rotate(${gr*(1-conv)}deg) scale(${Math.max(sc,0)})`;
+    g.style.clipPath=`inset(${(1-clamp(sp*1.4))*100}% 0 0 0)`;
+    vis(g,t>=GT[i] && conv<1);
+  }
+
+  /* ===== dot ===== */
+  let dx=540, dy=960, ds=0, dsx=1, dsy=1;
+  if(t>=4.55){ ds=spring(t-4.55,2.4,.45); }
+  if(t>=5.0){ // hops onto steps
+    let prev=[540,960,5.0];
+    for(let i=0;i<4;i++){ const [lx,ly,lt]=LAND[i]; const t0=lt-0.36;
+      if(t>=t0){ const p=prog(t,t0,0.36); const e=eInOut(p);
+        dx=lerp(prev[0],lx,e); dy=lerp(prev[1],ly,e)-Math.sin(Math.PI*p)*130;
+        if(t>=lt){ const q=t-lt; const sq=Math.exp(-q*9)*Math.cos(q*28); dsx=1+0.28*sq; dsy=1-0.28*sq; } }
+      prev=[lx,ly,lt]; }
+  }
+  // S3: ride panel top centre, then go to french card
+  let pr=null;
+  if(t>=8.55){ const p=eInOut(prog(t,8.6,0.65)); pr=lerpRect([101,BASE-580,SW,580],PANEL,p);
+    dx=pr[0]+pr[2]/2; dy=pr[1]-34; }
+  if(t>=12.45){ const p=eInOut(prog(t,12.45,0.45)); const fx=CARDS[0][0]+CS-4, fy=CARDS[0][1]+4;
+    dx=lerp(PANEL[0]+PANEL[2]/2,fx,p); dy=lerp(PANEL[1]-34,fy,p)-Math.sin(Math.PI*p)*90;
+    ds=1-eInCubic(prog(t,12.82,0.18)); }
+  $('dot').style.transform=`translate(${dx-22}px,${dy-22}px) scale(${ds*dsx},${ds*dsy})`;
+  vis($('dot'),ds>0.001 && t<13.1);
+
+  /* ===== S2 ===== */
+  const s2=t>=5.0 && t<9.3;
+  vis($('m_t1'),s2); vis($('m_t2'),s2); vis($('steps'),s2);
+  rise($('t1'),t,5.15,0.8,1.1,8.4,0.35,-1);
+  rise($('t2'),t,5.45,0.8,1.1,8.48,0.35,-1);
+  STEPS.forEach((s,i)=>{ const el=$('st'+i); let up=spring(t-s[5],1.7,.62);
+    let down= i<3 ? eInCubic(prog(t,8.4+i*0.09,0.34)) : 0;
+    el.style.transform=`translateY(${(1-up)*(s[1]+60)+down*(s[1]+60)}px)`;
+    // labels rise once the dot lands
+    const lp=eOutExpo(prog(t,LAND[i][2]-0.05,0.6)); const lx=eInCubic(prog(t,8.38,0.25));
+    $('stl'+i).style.transform=`translateY(${(1-lp)*230 + lx*230}px)`;
+    vis(el, i<3 ? t<9.0 : t<8.6);
+  });
+
+  /* ===== S3 panel / cards ===== */
+  const s3=t>=8.6 && t<26.0;
+  vis($('panel'),s3); vis($('m_t3'),t>=8.6 && t<14.2);
+  // panel rect over time
+  let P=PANEL, prad=56;
+  if(t<9.25){ const p=eInOut(prog(t,8.6,0.65)); P=lerpRect([101,BASE-580,SW,580+40],PANEL,p); prad=lerp(30,56,p); }
+  // window
+  const wexp=eInOut(prog(t,13.75,0.62));
+  const W16=[WIN[0]-16,WIN[1]-16,WIN[2]+32,WIN[3]+32];
+  if(t>=13.75){ P=lerpRect(PANEL,W16,wexp); prad=lerp(56,70,wexp); }
+  const tkp=eInOut(prog(t,21.25,0.6));
+  const T16=TICKET;
+  if(t>=21.25){ P=lerpRect(W16,T16,tkp); prad=lerp(70,48,tkp); }
+  setRect($('panel'),P,prad);
+  rise($('t3'),t,8.95,0.8,1.1,13.65,0.35,-1);
+
+  CARDS.forEach((c,i)=>{ const el=$('cd'+i); const sp=spring(t-c[5],2.0,.5);
+    let r=[c[0],c[1],CS,CS], rad=40, sc=0.55+0.45*sp, ty=(1-clamp(sp))*50;
+    if(i>0){ const out=eInCubic(prog(t,13.7+(i-1)*0.06,0.3)); sc*= (1-out); }
+    if(i===0){ const lift=spring(t-12.7,2.2,.45)*0.035*(1-wexp); sc=sc+lift;
+      if(t>=13.75){ r=lerpRect([c[0],c[1],CS,CS],WIN,wexp); rad=lerp(40,56,wexp); sc=1; ty=0; }
+      if(t>=21.25){ r=lerpRect(WIN,[TICKET[0]+16,TICKET[1]+16,TICKET[2]-32,TICKET[3]-32],tkp); rad=lerp(56,34,tkp); }
+    }
+    setRect(el,r,rad);
+    el.style.transform=`translateY(${ty}px) scale(${Math.max(sc,0)})`;
+    vis(el,t>=c[5] && (i===0? t<26.0 : t<14.05));
+    // flag + labels
+    const fl=$('fl'+i); fl.style.left=(r[2]/2-85)+'px';
+    rise($('nm'+i),t,c[5]+0.12,0.6,1.1, i===0?13.45:13.6,0.3,1);
+    rise($('gr'+i),t,c[5]+0.2,0.6,1.1, i===0?13.45:13.6,0.3,1);
+  });
+
+  // French card inner -> footage
+  const card0=$('cd0');
+  const inner = t>=14.35 ? '#2B1666' : '#FBF6EA';
+  card0.style.background=inner;
+  const r0w=parseFloat(card0.style.width), r0h=parseFloat(card0.style.height);
+  const fcx=r0w/2, fcy=125;
+  // big flag flood (14.0 - 14.5) then footage circle
+  const bf=eInOutQuint(prog(t,13.98,0.5)); const R=lerp(85,1450,bf);
+  vis($('bigflag'),t>=13.98 && t<14.9);
+  $('bigflagc').style.cssText+=`left:${fcx-R}px;top:${fcy-R}px;width:${2*R}px;height:${2*R}px`;
+  vis($('fl0'), t<14.4);
+  // footage layers
+  let ringR=0, ringX=0, ringY=0, ringOn=false;
+  const imgs=[];
+  CLIPS.forEach((c,i)=>{ const im=FEET[i]; const st=c[1]; const next=CLIPS[i+1];
+    const endT = next? next[1]+0.55 : 21.85;
+    const on = t>=st && t<endT;
+    vis(im,on);
+    if(!on) return;
+    let fi=Math.floor((t-st)*30)+1; fi=Math.min(fi,c[2]);
+    const src=`assets/foot/${c[0]}/${String(fi).padStart(3,'0')}.jpg`;
+    if(im.getAttribute('src')!==src){ im.setAttribute('src',src); }
+    imgs.push(im);
+    let rr, ox, oy;
+    if(c[3]===null){ const p=eInOutQuint(prog(t,st,0.5)); rr=lerp(0,1500,p); ox=fcx; oy=fcy; }
+    else { const p=eInOut(prog(t,st,0.55)); rr=lerp(0,1500,p); ox=c[3][0]*r0w; oy=c[3][1]*r0h;
+      if(p>0&&p<1){ ringOn=true; ringR=rr; ringX=ox; ringY=oy; } }
+    // collapse into ticket
+    if(t>=21.15){ const q=eInCubic(prog(t,21.15,0.5)); rr=lerp(1500,0,q); ox=r0w/2; oy=r0h/2+20; }
+    im.style.clipPath=`circle(${rr}px at ${ox}px ${oy}px)`;
+    im.style.zIndex=i+1;
+  });
+  vis($('revring'),ringOn);
+  if(ringOn){ $('revc').setAttribute('r',ringR); $('revc').setAttribute('cx',ringX); $('revc').setAttribute('cy',ringY); }
+  // chips
+  CHIPS.forEach((c,i)=>{ const el=$('chip'+i); const nxt=CHIPS[i+1]; const ex= nxt? nxt[1]-0.05 : 20.95;
+    const p=eOutExpo(prog(t,c[1],0.6)); const q=eInCubic(prog(t,ex,0.3));
+    el.style.transform=`translateY(${(1-p)*120 - q*120}px)`; vis(el,t>=c[1] && t<ex+0.3); });
+
+  // gold ring around selected card / window / ticket
+  let ringRect=null, rrad=50, draw=0;
+  if(t>=12.75){ draw=eInOut(prog(t,12.78,0.6));
+    const cr=[CARDS[0][0],CARDS[0][1],CS,CS]; let base=cr, br=40;
+    const lift=1+spring(t-12.7,2.2,.45)*0.035*(1-wexp);
+    if(t>=13.75){ base=lerpRect(cr,WIN,wexp); br=lerp(40,56,wexp); }
+    if(t>=21.25){ base=lerpRect(WIN,[TICKET[0]+16,TICKET[1]+16,TICKET[2]-32,TICKET[3]-32],tkp); br=lerp(56,34,tkp); }
+    const cxr=base[0]+base[2]/2, cyr=base[1]+base[3]/2; const s=(t<13.75?lift:1);
+    const g=t>=13.75?-26:14; // outside card; inside the indigo frame later
+    const w=base[2]*s+2*g, h=base[3]*s+2*g;
+    ringRect=[cxr-w/2,cyr-h/2,w,h]; rrad=br+g;
+  }
+  vis($('ring'),ringRect && t<26.0);
+  if(ringRect){ const rr=$('ringr'); rr.setAttribute('x',ringRect[0]); rr.setAttribute('y',ringRect[1]); rr.setAttribute('width',Math.max(ringRect[2],1)); rr.setAttribute('height',Math.max(ringRect[3],1)); rr.setAttribute('rx',Math.max(rrad,0));
+    rr.style.strokeDasharray=`${draw} 1`; rr.setAttribute('stroke-width', t>=13.75? lerp(7,4,wexp):7); }
+
+  /* ===== S5 ticket ===== */
+  const s5=t>=21.5 && t<26.0;
+  vis($('ticket'),s5);
+  if(s5){
+    rise($('tk1'),t,21.75,0.8,1.1);
+    rise($('tk2'),t,21.95,0.8,1.1);
+    const pf=eInOut(prog(t,21.95,0.5)); $('perf').setAttribute('x2',lerp(70,670,pf)); $('perf').style.visibility=pf>0?'visible':'hidden';
+    const nt=spring(t-21.8,2.2,.6); $('notchL').style.transform=`scale(${nt})`; $('notchR').style.transform=`scale(${nt})`;
+    ODO.forEach((d,i)=>{ const n=ROLLS[i]*10+d; const p=eOutCubic(prog(t,22.3+i*0.1,1.35-i*0.05)); $('od'+i).style.transform=`translateY(${-p*n}em)`; });
+    $('odo').style.visibility= t>=22.3?'visible':'hidden';
+    rise($('tkdj'),t,23.45,0.6,1.2);
+    const fp=spring(t-23.9,2.2,.5); $('tk3').style.transform=`translateY(${(1-clamp(fp))*110}%) scale(${0.8+0.2*fp})`;
+    const sh=eInOut(prog(t,24.35,0.9)); $('shineb').style.left=lerp(-300,900,sh)+'px';
+  }
+
+  /* ===== S6 ===== */
+  const MED=[540,640,200];
+  const fl=$('flood');
+  let fR=0, fX=625, fY=900;
+  if(t>=25.625){ const p=eInOutQuint(prog(t,25.625,0.4)); fR=lerp(0,1700,p); fX=TICKET[0]+TICKET[2]/2; fY=TICKET[1]+530; }
+  if(t>=26.0){ const p=eInOutQuint(prog(t,26.05,0.55)); fR=lerp(1700,MED[2],p); fX=lerp(TICKET[0]+TICKET[2]/2,MED[0],Math.min(1,p*3)); fY=lerp(TICKET[1]+530,MED[1],Math.min(1,p*3)); }
+  vis(fl,t>=25.625);
+  const ang=(t-25.6)*24;
+  fl.style.left=(fX-fR)+'px'; fl.style.top=(fY-fR)+'px'; fl.style.width=(2*fR)+'px'; fl.style.height=(2*fR)+'px';
+  fl.style.background=`conic-gradient(from ${ang}deg, #F5B82E, #FFD978, #F0AE1F, #E9A514, #FFD06A, #F5B82E)`;
+  const s6=t>=26.0;
+  vis($('endbg'),s6); vis($('bgwarm'),!s6);
+  ['m_wm','m_wl','m_cta','m_c1','m_c2','crest','medring'].forEach(k=>vis($(k),s6));
+  if(s6){
+    const cs=spring(t-26.45,1.8,.5); const cw=300*(0.7+0.3*cs);
+    const crest=$('crest'); crest.style.width=cw+'px'; crest.style.left=(MED[0]-cw/2)+'px'; crest.style.top=(MED[1]-cw*818/863/2+6)+'px';
+    crest.style.clipPath=`circle(${clamp(cs*1.3)*60}% at 50% 50%)`;
+    const mr=eInOut(prog(t,26.55,0.7)); const c=$('medringc'); c.setAttribute('cx',MED[0]); c.setAttribute('cy',MED[1]); c.setAttribute('r',MED[2]+22);
+    c.style.strokeDasharray=`${mr} 1`; c.style.transform=`rotate(-90deg)`; c.style.transformOrigin=`${MED[0]}px ${MED[1]}px`;
+    rise($('wm'),t,26.75,0.9,1.0);
+    rise($('wl'),t,27.05,0.8,1.15);
+    const cp=spring(t-27.35,1.9,.5); $('cta').style.transform=`translateY(${(1-clamp(cp*1.2))*120}%) scale(${0.85+0.15*cp})`;
+    rise($('c1'),t,27.7,0.8,1.15);
+    rise($('c2'),t,27.9,0.8,1.15);
+  }
+
+  /* ===== subtitles ===== */
+  SUBS.forEach((s,i)=>{ const el=$('sb'+i); const on=t>=s[0]-0.02 && t<s[1]+0.35; vis(el,on); if(!on) return;
+    const pin=eOutExpo(prog(t,s[0],0.55)); const pout=eInCubic(prog(t,s[1],0.32));
+    el.style.transform=`translateY(${(1-pin)*150 - pout*150}px)`;
+    const words=s[2].split(' ');
+    words.forEach((w,j)=>{ const wp=eOutExpo(prog(t,s[0]+0.06+j*0.07,0.5)); $('sw'+i+'_'+j).style.transform=`translateY(${(1-wp)*110}%)`; });
+  });
+
+  await Promise.all(imgs.map(im=>im.decode().catch(()=>{})));
+}
+window.seek=seek;
+window.ready=(async()=>{
+  const fams=['400','500','600','700'].map(w=>document.fonts.load(`${w} 40px "Markazi Text"`,'مرحبا بكم Hello 0123'));
+  await Promise.all(fams); await document.fonts.ready;
+  await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));
+  return true;
+})();
+</script>
+</body>
+</html>
