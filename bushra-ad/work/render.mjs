@@ -7,7 +7,7 @@ import path from 'node:path';
 import fs from 'node:fs';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const url = 'file://' + path.join(here, 'ad.html');
+const url = 'file://' + path.join(here, process.env.AD_HTML || 'ad.html');
 const [mode, out, ...rest] = process.argv.slice(2);
 
 async function openPage(browser) {

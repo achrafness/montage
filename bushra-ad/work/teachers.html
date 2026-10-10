@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Bushra Teachers Ad</title>
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/400.css">
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/500.css">
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/600.css">
+<link rel="stylesheet" href="node_modules/@fontsource/markazi-text/700.css">
+<style>
+  :root{ --cream:#FBF6EA; --ink:#2B1666; --ink2:#1E0F4C; --soft:#6B5AA8; --gold:#F5B82E; --gold3:#D9970F; }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:var(--cream)}
+  body{font-family:'Markazi Text',serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+  #stage{position:absolute;inset:0;overflow:hidden;background:var(--cream)}
+  #bgwarm{position:absolute;inset:0;background:radial-gradient(1200px 1300px at 50% 42%,#FFFBF1 0%,var(--cream) 55%,#F2E7CF 100%)}
+  #endbg{position:absolute;inset:0;background:radial-gradient(1100px 1200px at 50% 35%,#3A2185 0%,var(--ink) 50%,var(--ink2) 100%)}
+  #world{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0}
+  .abs{position:absolute;left:0;top:0}
+  .mask{position:absolute;overflow:hidden}
+  .ctr{left:0;right:0;text-align:center}
+  .lat{direction:ltr;unicode-bidi:isolate}
+  .tcard{position:absolute;left:0;top:0;background:var(--ink);overflow:hidden;box-shadow:0 26px 60px rgba(30,15,76,.22)}
+  .tcard .ph{position:absolute;overflow:hidden;background:#d9d2c3}
+  .tcard .ph img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 30%}
+  .tcard .hl{position:absolute;border:3px solid var(--gold);pointer-events:none}
+  .row{position:absolute;background:var(--cream);border-radius:40px;overflow:hidden}
+  .row .ic{position:absolute;right:34px;top:42px;width:116px;height:116px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
+  .row .ic svg{width:62px;height:62px}
+  .row .lv{position:absolute;right:178px;top:26px;font-weight:700;font-size:96px;line-height:1.2;color:var(--ink);white-space:nowrap}
+  .row .ds{position:absolute;left:44px;top:66px;font-weight:600;font-size:50px;line-height:1.2;color:var(--soft);white-space:nowrap}
+  .subj{position:absolute;left:0;top:0;background:var(--ink);color:var(--cream);font-weight:600;font-size:44px;line-height:1;padding:14px 28px 20px;border-radius:999px;white-space:nowrap}
+  .chip{display:inline-block;font-weight:700;font-size:56px;line-height:1;padding:16px 36px 22px;border-radius:999px;white-space:nowrap;box-shadow:0 10px 30px rgba(20,8,60,.22)}
+  .contact{display:flex;align-items:center;gap:16px;font-weight:600;font-size:50px;color:var(--cream);white-space:nowrap}
+  .contact svg{width:46px;height:46px;flex:none}
+  #hdr{position:absolute;left:0;right:0;top:250px;height:170px;overflow:hidden;text-align:center}
+  #sub{position:absolute;left:40px;right:40px;top:1530px;height:150px;overflow:hidden;text-align:center}
+  .pill{position:absolute;left:0;right:0;top:0;text-align:center}
+  .pill > b{display:inline-block;background:rgba(30,15,76,.93);color:var(--cream);font-weight:600;font-size:66px;line-height:1;padding:22px 48px 30px;border-radius:999px;white-space:nowrap;box-shadow:0 14px 40px rgba(20,8,60,.22)}
+  .w{display:inline-block}
+  #grain{position:absolute;left:0;top:0;pointer-events:none;opacity:.05;mix-blend-mode:soft-light}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bgwarm"></div>
+  <div id="endbg"></div>
+  <div id="world">
+    <!-- S1 -->
+    <div id="m_h1" class="mask ctr" style="top:600px;height:210px"><div id="h1" style="font-weight:700;font-size:168px;line-height:1.2;color:var(--ink)">وراء كل نجاح</div></div>
+    <div id="m_h2" class="mask ctr" style="top:790px;height:330px"><div id="h2" style="font-weight:700;font-size:270px;line-height:1.2;color:var(--gold3)">أستاذ</div></div>
+    <svg id="swash" class="abs" style="left:300px;top:1100px;width:480px;height:80px;overflow:visible" viewBox="0 0 480 80">
+      <path id="swashp" d="M10 42 C 110 70, 210 12, 300 38 S 440 58, 470 26" fill="none" stroke="#F5B82E" stroke-width="10" stroke-linecap="round" pathLength="1"/>
+    </svg>
+
+    <!-- S2 teacher strip -->
+    <div id="cards"></div>
+
+    <!-- S3 panel -->
+    <div id="panel" class="abs" style="background:var(--ink)"></div>
+    <div id="rows"></div>
+    <div id="subjs"></div>
+
+    <!-- S4 -->
+    <div id="top" class="abs" style="overflow:hidden;background:var(--ink)">
+      <div id="topin" class="abs" style="overflow:hidden;background:var(--ink)"><img id="topimg" class="abs" style="width:100%;height:100%;object-fit:cover"></div>
+      <div id="m_tl" class="mask" style="right:34px;bottom:30px;height:110px;width:600px;left:auto;top:auto"><div id="tl" style="position:absolute;right:0;bottom:0"><span class="chip" style="background:var(--cream);color:var(--ink)">حضوريًا</span></div></div>
+    </div>
+    <div id="bot" class="abs" style="overflow:hidden;background:var(--ink)">
+      <div id="botin" class="abs" style="background:var(--cream)">
+        <div id="lpg" class="abs" style="left:56px;top:44px;width:460px;height:300px;transform:scale(.8);transform-origin:0 0">
+          <svg id="laptop" class="abs" style="overflow:visible" width="460" height="300" viewBox="0 0 460 300">
+            <rect id="lp1" x="60" y="10" width="340" height="220" rx="18" fill="none" stroke="#2B1666" stroke-width="10" pathLength="1"/>
+            <path id="lp2" d="M10 262 H450 L430 290 H30 Z" fill="none" stroke="#2B1666" stroke-width="10" stroke-linejoin="round" pathLength="1"/>
+          </svg>
+          <img id="lpcrest" class="abs" src="assets/crest_indigo.png" style="width:150px;left:155px;top:49px">
+          <div id="live" class="abs" style="left:300px;top:-12px;display:flex;align-items:center;gap:10px;background:#E1343F;color:#fff;font-weight:700;font-size:34px;line-height:1;padding:8px 18px 12px;border-radius:999px;direction:ltr"><span id="livedot" style="width:14px;height:14px;border-radius:50%;background:#fff;display:inline-block"></span>LIVE</div>
+        </div>
+      </div>
+      <div id="m_bl" class="mask" style="right:34px;bottom:30px;height:110px;width:600px;left:auto;top:auto"><div id="bl" style="position:absolute;right:0;bottom:0"><span class="chip" style="background:var(--ink);color:var(--cream)">عبر الإنترنت</span></div></div>
+    </div>
+    <svg id="rings" class="abs" style="width:1px;height:1px;overflow:visible"><rect id="ringT" fill="none" stroke="#F5B82E" stroke-width="4"/><rect id="ringB" fill="none" stroke="#F5B82E" stroke-width="4"/></svg>
+    <div id="orc" class="abs" style="width:124px;height:124px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE39A,#F5B82E 55%,#D9970F);font-weight:700;font-size:66px;line-height:1;color:var(--ink2);box-shadow:0 12px 30px rgba(30,15,76,.25)"><span style="position:absolute;left:0;right:0;top:22px;text-align:center">أو</span></div>
+
+    <!-- S5 end card -->
+    <div id="flood" class="abs" style="border-radius:50%"></div>
+    <img id="crest" class="abs" src="assets/crest_indigo.png" style="width:300px">
+    <svg id="medring" class="abs" style="width:1080px;height:1920px;overflow:visible"><circle id="medringc" fill="none" stroke="#FBF6EA" stroke-width="4" pathLength="1"/></svg>
+    <div id="m_wm" class="mask ctr" style="top:858px;height:200px"><div id="wm" style="font-weight:700;font-size:168px;line-height:1.15;color:var(--cream)">مدرسة بشرى</div></div>
+    <div id="m_wl" class="mask ctr" style="top:1050px;height:90px"><img id="wl" src="assets/wordmark_cream.png" style="height:80px;display:inline-block"></div>
+    <div id="m_cta" class="mask ctr" style="top:1150px;height:140px"><div id="cta" style="display:inline-block;background:var(--gold);color:var(--ink2);font-weight:700;font-size:74px;line-height:1;padding:20px 64px 30px;border-radius:999px">سجّل الآن</div></div>
+    <div id="m_c1" class="mask" style="left:0;right:0;top:1300px;height:80px"><div id="c1" style="display:flex;justify-content:center;gap:60px">
+      <div class="contact"><svg viewBox="0 0 24 24" fill="#F5B82E"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.6-.1 1.1z"/></svg><span class="lat">0669 65 45 15</span></div>
+      <div class="contact"><svg viewBox="0 0 24 24" fill="#F5B82E"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>خنشلة</span></div>
+    </div></div>
+    <div id="m_c2" class="mask" style="left:0;right:0;top:1385px;height:80px"><div id="c2" style="display:flex;justify-content:center;gap:56px">
+      <div class="contact"><svg viewBox="0 0 24 24" fill="none" stroke="#F5B82E" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="#F5B82E" stroke="none"/></svg><span class="lat">@bushrasschool40</span></div>
+      <div class="contact"><svg viewBox="0 0 24 24" fill="#F5B82E"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4V14h2.7v8z"/></svg><span class="lat">Bushra's School</span></div>
+    </div></div>
+
+    <div id="dot" class="abs" style="width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE39A,#F5B82E 55%,#D9970F)"></div>
+  </div>
+
+  <div id="hdr"><div id="hdrt" style="font-weight:700;font-size:136px;line-height:1.2;color:var(--ink)">أساتذة <span style="color:var(--gold3)">مختصون</span></div></div>
+  <div id="sub"></div>
+  <img id="grain" src="assets/grain.png" width="1080" height="1920">
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const prog=(t,a,d)=>clamp((t-a)/d);
+const eOutCubic=p=>1-Math.pow(1-p,3);
+const eInCubic=p=>p*p*p;
+const eInOut=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;
+const eOutExpo=p=>p>=1?1:1-Math.pow(2,-10*p);
+const eInOutSine=p=>-(Math.cos(Math.PI*p)-1)/2;
+const eInOutQuint=p=>p<.5?16*p*p*p*p*p:1-Math.pow(-2*p+2,5)/2;
+function spring(t,f=2.1,z=0.52){ if(t<=0) return 0; const w=2*Math.PI*f, wd=w*Math.sqrt(1-z*z);
+  return 1-Math.exp(-z*w*t)*(Math.cos(wd*t)+(z*w/wd)*Math.sin(wd*t)); }
+const vis=(el,on)=>{ el.style.display=on?'':'none'; };
+function rise(el,t,t0,dur=.7,dist=1.15,exitT=null,exitDur=.35,exitDir=-1){
+  const p=eOutExpo(prog(t,t0,dur)); let y=(1-p)*dist*100;
+  if(exitT!==null && t>=exitT){ const q=eInCubic(prog(t,exitT,exitDur)); y=exitDir*q*dist*100; }
+  el.style.transform=`translateY(${y}%)`;
+}
+const setRect=(el,r,rad)=>{ el.style.left=r[0]+'px'; el.style.top=r[1]+'px'; el.style.width=r[2]+'px'; el.style.height=r[3]+'px'; if(rad!==undefined) el.style.borderRadius=rad+'px'; };
+const lerpRect=(a,b,p)=>a.map((v,i)=>lerp(v,b[i],p));
+
+/* ---------------- layout ---------------- */
+const CW=420, CH=560, GAP=40, CY=620, N=7;
+const CX=i=>540-(CW+GAP)*i;               // card centre x (RTL: the strip runs to the left)
+const CXL=CX(N-1);                         // last card centre
+const PANEL=[CXL-450,400,900,780];
+const PCX=CXL;
+const TOPR=[PCX-400,400,800,470], BOTR=[PCX-400,925,800,420];
+const ORC=[PCX,898];
+
+/* ---------------- camera ---------------- */
+const CAM=[
+  [0,4.9,[1.0,540,960],[1.05,540,960],eInOut],
+  [5.0,13.55,[1.05,540,960],[1.05,CXL,930],eInOutSine],
+  [13.75,21.1,[1.05,CXL,930],[1.09,CXL-15,900],eInOut],
+  [21.25,25.6,[1.09,CXL-15,900],[1.14,CXL-25,885],eInOut],
+  [26.0,32.5,[1.0,540,960],[1.045,540,940],eInOut],
+];
+function cam(t){ let cur=CAM[0][2];
+  for(const [a,b,f,to,e] of CAM){ if(t>=a){ if(t<=b){const p=e(prog(t,a,b-a)); return [Math.exp(lerp(Math.log(f[0]),Math.log(to[0]),p)),lerp(f[1],to[1],p),lerp(f[2],to[2],p)];} cur=to; } }
+  return cur; }
+
+/* card pop times: when each card is about to enter from the left edge */
+const POP=[5.0];
+for(let i=1;i<N;i++){ let t=5.0; while(t<13.6){ const x=cam(t)[1]; if(x-CX(i) <= 600) break; t+=1/240; } POP.push(+(Math.round(Math.max(t,POP[i-1]+0.55)/0.3125)*0.3125).toFixed(4)); }
+window.POP=POP;
+
+/* build cards */
+for(let i=0;i<N;i++){ const d=document.createElement('div'); d.className='tcard'; d.id='tc'+i;
+  d.innerHTML=`<div class="ph" id="ph${i}"><img id="im${i}" src="assets/teach/p${i}.jpg"></div><div class="hl" id="hl${i}"></div>`; $('cards').appendChild(d); }
+
+/* rows */
+const ICONS={
+  book:'<svg viewBox="0 0 24 24" fill="none" stroke="#1E0F4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg>',
+  cap:'<svg viewBox="0 0 24 24" fill="none" stroke="#1E0F4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/><path d="M22 10v6"/></svg>',
+  scroll:'<svg viewBox="0 0 24 24" fill="none" stroke="#1E0F4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/></svg>',
+};
+const ROWS=[ // label, desc, icon, popT  (top to bottom)
+  ['ثانوي','شهادة البكالوريا','scroll',15.625],
+  ['متوسط','شهادة BEM','cap',15.0],
+  ['ابتدائي','شهادة الابتدائي','book',14.375],
+];
+const RW=800, RH=200;
+const rowRect=i=>[PANEL[0]+50,PANEL[1]+50+i*(RH+40),RW,RH];
+ROWS.forEach((r,i)=>{ const d=document.createElement('div'); d.className='row'; d.id='rw'+i; d.style.left='0';d.style.top='0';
+  d.innerHTML=`<div class="ic" id="ic${i}">${ICONS[r[2]]}</div><div class="mask" style="right:178px;top:20px;height:130px;width:420px"><div class="lv" id="lv${i}" style="position:relative;right:0;top:0">${r[0]}</div></div>
+  <div class="mask" style="left:34px;top:58px;height:90px;width:330px"><div class="ds" id="ds${i}" style="position:relative;left:0;top:0;text-align:left">${r[1].replace('BEM','<span class="lat">BEM</span>')}</div></div>`;
+  $('rows').appendChild(d); });
+const LANDR=ROWS.map((r,i)=>{ const rr=rowRect(i); return [rr[0]+rr[2]-34-58, rr[1]-24, r[3]+0.34]; }).reverse(); // bottom row first
+
+/* subjects (school-wide list, not tied to any teacher) */
+const SUBJ=['الرياضيات','الفيزياء','العلوم','العربية','الفرنسية','الإنجليزية','الألمانية','التربية الإسلامية'];
+SUBJ.forEach((s,i)=>{ const d=document.createElement('div'); d.className='subj'; d.id='sj'+i; d.textContent=s; $('subjs').appendChild(d); });
+
+/* subtitles */
+const SUBS=[
+  [0.35,2.45,'وراء كل نجاح'],
+  [2.6,4.6,'…أستاذ يؤمن بك'],
+  [5.15,6.95,'في مدرسة بشرى، أساتذة مختصون'],
+  [7.1,8.9,'ذوو خبرة في التعليم'],
+  [9.2,11.4,'ومتابعة فردية لكل طالب'],
+  [11.55,13.7,'يرافقونك نحو النجاح'],
+  [14.2,16.45,'من الابتدائي'],
+  [16.6,18.6,'إلى البكالوريا'],
+  [18.75,21.0,'وفي مختلف المواد'],
+  [21.5,23.6,'حضوريًا أو عبر الإنترنت'],
+  [23.75,25.75,'حسب راحتك'],
+  [26.6,28.5,'سجّل الآن'],
+  [28.65,32.5,'معًا نحو مستقبل أفضل'],
+];
+SUBS.forEach((s,i)=>{ const d=document.createElement('div'); d.className='pill'; d.id='sb'+i;
+  d.innerHTML='<b>'+s[2].split(' ').map((w,j)=>`<span class="mask" style="position:relative;display:inline-block;vertical-align:top;overflow:hidden;padding:0 2px"><span class="w" id="sw${i}_${j}">${w}</span></span>`).join(' ')+'</b>';
+  $('sub').appendChild(d); });
+
+/* footage for "in person" */
+const TOPCLIP=['c5',67,21.45];
+
+/* ---------------- seek ---------------- */
+async function seek(t){
+  const [z,cx,cy]=cam(t);
+  $('world').style.transform=`translate(540px,960px) scale(${z}) translate(${-cx}px,${-cy}px)`;
+  const wait=[];
+
+  /* S1 */
+  const s1=t<5.0;
+  vis($('m_h1'),s1); vis($('m_h2'),s1); vis($('swash'),s1);
+  rise($('h1'),t,0.3,0.9,1.1,4.1,0.38,-1);
+  rise($('h2'),t,2.6,0.9,1.1,4.15,0.38,1);
+  const sw=eInOut(prog(t,3.05,0.7));
+  const shr=eInOut(prog(t,4.1,0.35)); // swash contracts to its centre point -> dot
+  const p=$('swashp'); p.style.strokeDasharray=`${sw*(1-shr)} 1`; p.style.strokeDashoffset=`${-shr*0.5}`;
+
+  /* dot */
+  let dx=540, dy=1140, ds=0, dsx=1, dsy=1;
+  if(t>=4.35) ds=spring(t-4.35,2.4,.45);
+  if(t>=4.45){ const q=eInOut(prog(t,4.45,0.4)); dy=lerp(1140,900,q); }
+  if(t>=4.85) ds=0; // the dot becomes the first portrait
+  // S3: the dot reappears from the last portrait's collapse and climbs the level rows
+  if(t>=13.55 && t<16.3){ ds=spring(t-13.55,2.4,.5); let prev=[CXL,CY+CH/2];
+    dx=prev[0]; dy=prev[1];
+    if(t>=13.75){ const q=eInOut(prog(t,13.75,0.45)); dx=lerp(CXL,PANEL[0]+PANEL[2]/2,q); dy=lerp(CY+CH/2,PANEL[1]-40,q); prev=[PANEL[0]+PANEL[2]/2,PANEL[1]-40]; }
+    for(let i=0;i<3;i++){ const [lx,ly,lt]=LANDR[i]; const t0=lt-0.34;
+      if(t>=t0){ const pp=prog(t,t0,0.34), e=eInOut(pp); dx=lerp(prev[0],lx,e); dy=lerp(prev[1],ly,e)-Math.sin(Math.PI*pp)*110;
+        if(t>=lt){ const qq=t-lt; const sq=Math.exp(-qq*9)*Math.cos(qq*28); dsx=1+0.28*sq; dsy=1-0.28*sq; } }
+      prev=[lx,ly]; }
+    if(t>=16.0) ds*=1-eInCubic(prog(t,16.0,0.3)); }
+  $('dot').style.transform=`translate(${dx-22}px,${dy-22}px) scale(${ds*dsx},${ds*dsy})`;
+  vis($('dot'),ds>0.001);
+
+  /* S2 cards */
+  const sOut=eInOut(prog(t,13.3,0.4));   // last portrait collapses
+  for(let i=0;i<N;i++){ const el=$('tc'+i), ph=$('ph'+i), hl=$('hl'+i), im=$('im'+i);
+    let r, rad=36, sc=1, ty=0, on=t>=POP[i]-0.05 && t<14.2;
+    const cxi=CX(i);
+    if(i===0 && t<5.6){ // gold dot grows into a circle, the photo opens inside, then it becomes a card
+      const g=spring(t-4.8,1.6,.62); const dia=lerp(44,CW,clamp(g));
+      const h=lerp(dia,CH,eInOut(prog(t,5.05,0.5)));
+      r=[cxi-dia/2,CY+CH/2-h/2,dia,h]; rad=lerp(dia/2,36,eInOut(prog(t,5.05,0.5)));
+      on=t>=4.8;
+    } else { r=[cxi-CW/2,CY,CW,CH];
+      if(i>0){ const g=spring(t-POP[i],1.7,.78); sc=0.86+0.14*g; ty=(1-clamp(g))*70; } }
+    // everything except the last card slides down out of frame as the panel arrives
+    if(i<N-1 && t>=13.4){ const q=eInCubic(prog(t,13.4+0.04*(N-1-i),0.35)); ty+=q*900; }
+    vis(el,on); if(!on) continue;
+    setRect(el,r,rad); el.style.transform=`translateY(${ty}px) scale(${sc})`; el.style.transformOrigin='50% 50%';
+    const pad=12; ph.style.left=pad+'px'; ph.style.top=pad+'px'; ph.style.width=(r[2]-2*pad)+'px'; ph.style.height=(r[3]-2*pad)+'px'; ph.style.borderRadius=Math.max(rad-pad,0)+'px';
+    hl.style.left=(pad+10)+'px'; hl.style.top=(pad+10)+'px'; hl.style.width=(r[2]-2*pad-20)+'px'; hl.style.height=(r[3]-2*pad-20)+'px'; hl.style.borderRadius=Math.max(rad-pad-10,0)+'px';
+    hl.style.display = r[2]>200 ? '' : 'none';
+    // photo reveal (gold disc -> photo), slow push on the photo
+    let pr=1500, pox=(r[2]-2*pad)/2, poy=(r[3]-2*pad)/2;
+    if(i===0){ pr=lerp(0,700,eInOutQuint(prog(t,4.95,0.55))); }
+    if(i===N-1 && t>=13.3){ pr=lerp(900,0,sOut); }
+    im.style.clipPath=`circle(${pr}px at ${pox}px ${poy}px)`;
+    ph.style.background = (i===0 && t<5.5) ? 'radial-gradient(circle at 35% 35%,#FFE39A,#F5B82E 55%,#D9970F)' : '#2B1666';
+    const kb=1.0+0.08*clamp((t-POP[i])/6);
+    im.style.transform=`scale(${kb})`;
+    wait.push(im);
+  }
+
+  /* S3 panel */
+  const s3=t>=13.55 && t<26.0;
+  vis($('panel'),s3);
+  let P=PANEL, prad=56;
+  const lastCard=[CXL-CW/2,CY,CW,CH];
+  if(t<14.3){ const q=eInOut(prog(t,13.6,0.65)); P=lerpRect(lastCard,PANEL,q); prad=lerp(36,56,q); }
+  const s4=eInOut(prog(t,21.25,0.6));
+  if(t>=21.25){ P=lerpRect(PANEL,TOPR,s4); prad=lerp(56,48,s4); }
+  setRect($('panel'),P,prad);
+  // the last teacher card hides as soon as the panel takes over its rectangle
+  if(t>=13.6) vis($('tc'+(N-1)),false);
+
+  ROWS.forEach((r,i)=>{ const el=$('rw'+i); const g=spring(t-r[3],1.9,.55);
+    const out=eInCubic(prog(t,21.1+0.05*i,0.3));
+    const rr=rowRect(i); setRect(el,rr);
+    el.style.transform=`translateY(${(1-clamp(g))*60}px) scale(${(0.7+0.3*g)*(1-out)})`;
+    vis(el,t>=r[3] && t<21.45);
+    const land=LANDR[2-i][2];
+    rise($('lv'+i),t,r[3]+0.08,0.6,1.1); rise($('ds'+i),t,r[3]+0.16,0.6,1.1);
+    const ic=spring(t-(land-0.02),2.6,.4); $('ic'+i).style.transform=`scale(${0.75+0.25*ic})`;
+  });
+  // subjects below the panel
+  const SJ0=18.75; const rowsY=[PANEL[1]+PANEL[3]+40, PANEL[1]+PANEL[3]+125];
+  const sjEls=SUBJ.map((s,i)=>$('sj'+i));
+  // lay out once per frame: two rows of 4, centred, RTL order
+  [0,1].forEach(rw=>{ const items=sjEls.slice(rw*4,rw*4+4); const ws=items.map(e=>e.offsetWidth||200); const total=ws.reduce((a,b)=>a+b,0)+18*3;
+    let x=PCX+total/2; items.forEach((e,k)=>{ x-=ws[k]; const idx=rw*4+k; const g=spring(t-(SJ0+idx*0.11),2.2,.5); const out=eInCubic(prog(t,21.15+idx*0.02,0.25));
+      e.style.left=x+'px'; e.style.top=rowsY[rw]+'px'; e.style.transform=`translateY(${(1-clamp(g))*40}px) scale(${(0.6+0.4*g)*(1-out)})`; vis(e,t>=SJ0+idx*0.11 && t<21.45); x-=18; }); });
+
+  /* S4 in person / online */
+  const s4on=t>=21.25 && t<26.0;
+  vis($('top'),s4on); vis($('bot'),t>=21.75 && t<26.0); vis($('orc'),t>=22.4 && t<26.0); vis($('rings'),s4on);
+  if(s4on){
+    setRect($('top'),P,prad);
+    const pad=14; const tin=$('topin'); setRect(tin,[pad,pad,P[2]-2*pad,P[3]-2*pad],Math.max(prad-pad,0));
+    let fi=Math.min(TOPCLIP[1],Math.floor(Math.max(0,t-TOPCLIP[2])*30)+1);
+    const src=`assets/foot/${TOPCLIP[0]}/${String(fi).padStart(3,'0')}.jpg`; const ti=$('topimg'); if(ti.getAttribute('src')!==src) ti.setAttribute('src',src); wait.push(ti);
+    const rv=eInOutQuint(prog(t,21.45,0.55)); ti.style.clipPath=`circle(${lerp(0,900,rv)}px at 50% 50%)`;
+    rise($('tl'),t,21.9,0.6,1.2);
+    // bottom card pops
+    const g=spring(t-21.75,1.8,.55); setRect($('bot'),BOTR,48); $('bot').style.transform=`translateY(${(1-clamp(g))*70}px) scale(${0.75+0.25*g})`;
+    setRect($('botin'),[14,14,BOTR[2]-28,BOTR[3]-28],34);
+    const d1=eInOut(prog(t,21.95,0.7)), d2=eInOut(prog(t,22.35,0.5));
+    $('lp1').style.strokeDasharray=`${d1} 1`; $('lp2').style.strokeDasharray=`${d2} 1`;
+    const cr=$('lpcrest'); const cg=spring(t-22.7,2.0,.5); cr.style.transform=`scale(${cg})`;
+    const lv=$('live'); const lg=spring(t-23.15,2.2,.5); lv.style.transform=`scale(${lg})`;
+    $('livedot').style.transform=`scale(${0.7+0.3*Math.abs(Math.sin((t-23.15)*3.2))})`;
+    rise($('bl'),t,22.2,0.6,1.2);
+    // gold hairlines
+    const rT=$('ringT'), rB=$('ringB'); const ins=26;
+    rT.setAttribute('x',P[0]+ins); rT.setAttribute('y',P[1]+ins); rT.setAttribute('width',Math.max(1,P[2]-2*ins)); rT.setAttribute('height',Math.max(1,P[3]-2*ins)); rT.setAttribute('rx',Math.max(prad-ins,0));
+    const gb=0.75+0.25*g, bw=BOTR[2]*gb, bh=BOTR[3]*gb, bx=BOTR[0]+BOTR[2]/2-bw/2, by=BOTR[1]+BOTR[3]/2-bh/2+(1-clamp(g))*70;
+    rB.setAttribute('x',bx+ins); rB.setAttribute('y',by+ins); rB.setAttribute('width',Math.max(1,bw-2*ins)); rB.setAttribute('height',Math.max(1,bh-2*ins)); rB.setAttribute('rx',22);
+    vis(rB,t>=21.75);
+    // "or" medallion
+    const og=spring(t-22.4,2.0,.45); $('orc').style.transform=`translate(${ORC[0]-62}px,${ORC[1]-62}px) scale(${og})`;
+  }
+
+  /* S5 */
+  const MED=[540,640,200];
+  const fl=$('flood'); let fR=0, fX=ORC[0], fY=ORC[1];
+  if(t>=25.625){ const q=eInOutQuint(prog(t,25.625,0.4)); fR=lerp(0,1700,q); }
+  if(t>=26.0){ const q=eInOutQuint(prog(t,26.05,0.55)); fR=lerp(1700,MED[2],q); fX=lerp(540,MED[0],Math.min(1,q*3)); fY=lerp(ORC[1],MED[1],Math.min(1,q*3)); }
+  vis(fl,t>=25.625);
+  fl.style.left=(fX-fR)+'px'; fl.style.top=(fY-fR)+'px'; fl.style.width=(2*fR)+'px'; fl.style.height=(2*fR)+'px';
+  fl.style.background=`conic-gradient(from ${(t-25.6)*24}deg, #F5B82E, #FFD978, #F0AE1F, #E9A514, #FFD06A, #F5B82E)`;
+  const s6=t>=26.0;
+  vis($('endbg'),s6); vis($('bgwarm'),!s6);
+  ['m_wm','m_wl','m_cta','m_c1','m_c2','crest','medring'].forEach(k=>vis($(k),s6));
+  if(s6){
+    const cs=spring(t-26.45,1.8,.5); const cw=300*(0.7+0.3*cs);
+    const crest=$('crest'); crest.style.width=cw+'px'; crest.style.left=(MED[0]-cw/2)+'px'; crest.style.top=(MED[1]-cw*818/863/2+6)+'px';
+    crest.style.clipPath=`circle(${clamp(cs*1.3)*60}% at 50% 50%)`;
+    const mr=eInOut(prog(t,26.55,0.7)); const c=$('medringc'); c.setAttribute('cx',MED[0]); c.setAttribute('cy',MED[1]); c.setAttribute('r',MED[2]+22);
+    c.style.strokeDasharray=`${mr} 1`; c.style.transform='rotate(-90deg)'; c.style.transformOrigin=`${MED[0]}px ${MED[1]}px`;
+    rise($('wm'),t,26.75,0.9,1.0); rise($('wl'),t,27.05,0.8,1.15);
+    const cp=spring(t-27.35,1.9,.5); $('cta').style.transform=`translateY(${(1-clamp(cp*1.2))*120}%) scale(${0.85+0.15*cp})`;
+    rise($('c1'),t,27.7,0.8,1.15); rise($('c2'),t,27.9,0.8,1.15);
+  }
+
+  /* header (screen space) */
+  vis($('hdr'),t>=5.1 && t<13.9);
+  rise($('hdrt'),t,5.2,0.9,1.1,13.45,0.35,-1);
+
+  /* subtitles */
+  SUBS.forEach((s,i)=>{ const el=$('sb'+i); const on=t>=s[0]-0.02 && t<s[1]+0.35; vis(el,on); if(!on) return;
+    const pin=eOutExpo(prog(t,s[0],0.55)); const pout=eInCubic(prog(t,s[1],0.32));
+    el.style.transform=`translateY(${(1-pin)*150 - pout*150}px)`;
+    s[2].split(' ').forEach((w,j)=>{ const wp=eOutExpo(prog(t,s[0]+0.06+j*0.07,0.5)); $('sw'+i+'_'+j).style.transform=`translateY(${(1-wp)*110}%)`; });
+  });
+
+  await Promise.all(wait.map(im=>im.decode().catch(()=>{})));
+}
+window.seek=seek;
+window.ready=(async()=>{
+  await Promise.all(['400','500','600','700'].map(w=>document.fonts.load(`${w} 40px "Markazi Text"`,'مرحبا بكم Hello 0123')));
+  await document.fonts.ready;
+  await Promise.all([...document.images].map(i=>i.decode().catch(()=>{})));
+  return true;
+})();
+</script>
+</body>
+</html>
