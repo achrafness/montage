@@ -14,9 +14,9 @@ Total: 32.5 s. `bed_for_voice.wav` is the music with room left for your voice.
 | 7 | 14.20 – 16.45 | من الابتدائي | From primary |
 | 8 | 16.60 – 18.60 | إلى البكالوريا | to the Baccalaureate |
 | 9 | 18.75 – 21.00 | وفي مختلف المواد | and across all subjects |
-| 10 | 21.50 – 23.60 | حضوريًا أو عبر الإنترنت | In person or online |
-| 11 | 23.75 – 25.75 | حسب راحتك | whichever suits you |
+| 10 | 21.50 – 23.60 | في بيئة محفزة | in a motivating environment |
+| 11 | 23.75 – 25.75 | هنا في خنشلة | right here in Khenchela |
 | 12 | 26.60 – 28.50 | سجّل الآن | Register now |
 | 13 | 28.65 – 32.40 | معًا نحو مستقبل أفضل | together towards a better future |
 
-Every line comes from your website's own copy: أساتذة مختصون، ذوو خبرة في التعليم ومتابعة فردية للطلاب، من الابتدائي إلى البكالوريا، حضوريا أو عبر الإنترنت، معًا نحو مستقبل أفضل.
+Every line comes from your website's own copy: أساتذة مختصون، ذوو خبرة في التعليم ومتابعة فردية للطلاب، من الابتدائي إلى البكالوريا، بيئة محفزة، معًا نحو مستقبل أفضل.

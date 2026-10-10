@@ -64,7 +64,7 @@
     <!-- S4 -->
     <div id="top" class="abs" style="overflow:hidden;background:var(--ink)">
       <div id="topin" class="abs" style="overflow:hidden;background:var(--ink)"><img id="topimg" class="abs" style="width:100%;height:100%;object-fit:cover"></div>
-      <div id="m_tl" class="mask" style="right:34px;bottom:30px;height:110px;width:600px;left:auto;top:auto"><div id="tl" style="position:absolute;right:0;bottom:0"><span class="chip" style="background:var(--cream);color:var(--ink)">حضوريًا</span></div></div>
+      <div id="m_tl" class="mask" style="right:34px;bottom:30px;height:110px;width:600px;left:auto;top:auto"><div id="tl" style="position:absolute;right:0;bottom:0"><span class="chip" style="background:var(--cream);color:var(--ink)">هنا في خنشلة</span></div></div>
     </div>
     <div id="bot" class="abs" style="overflow:hidden;background:var(--ink)">
       <div id="botin" class="abs" style="background:var(--cream)">
@@ -80,7 +80,7 @@
       <div id="m_bl" class="mask" style="right:34px;bottom:30px;height:110px;width:600px;left:auto;top:auto"><div id="bl" style="position:absolute;right:0;bottom:0"><span class="chip" style="background:var(--ink);color:var(--cream)">عبر الإنترنت</span></div></div>
     </div>
     <svg id="rings" class="abs" style="width:1px;height:1px;overflow:visible"><rect id="ringT" fill="none" stroke="#F5B82E" stroke-width="4"/><rect id="ringB" fill="none" stroke="#F5B82E" stroke-width="4"/></svg>
-    <div id="orc" class="abs" style="width:124px;height:124px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE39A,#F5B82E 55%,#D9970F);font-weight:700;font-size:66px;line-height:1;color:var(--ink2);box-shadow:0 12px 30px rgba(30,15,76,.25)"><span style="position:absolute;left:0;right:0;top:22px;text-align:center">أو</span></div>
+    <div id="orc" class="abs" style="width:124px;height:124px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FFE39A,#F5B82E 55%,#D9970F);font-weight:700;font-size:66px;line-height:1;color:var(--ink2);box-shadow:0 12px 30px rgba(30,15,76,.25)"><span style="position:absolute;left:30px;top:30px;width:64px;height:64px"><svg width="64" height="64" viewBox="0 0 24 24" fill="#1E0F4C"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span></div>
 
     <!-- S5 end card -->
     <div id="flood" class="abs" style="border-radius:50%"></div>
@@ -134,8 +134,8 @@ const CX=i=>540-(CW+GAP)*i;               // card centre x (RTL: the strip runs 
 const CXL=CX(N-1);                         // last card centre
 const PANEL=[CXL-450,400,900,780];
 const PCX=CXL;
-const TOPR=[PCX-400,400,800,470], BOTR=[PCX-400,925,800,420];
-const ORC=[PCX,898];
+const TOPR=[PCX-400,380,800,760], BOTR=[PCX-400,925,800,420];
+const ORC=[PCX,1240];
 
 /* ---------------- camera ---------------- */
 const CAM=[
@@ -192,8 +192,8 @@ const SUBS=[
   [14.2,16.45,'من الابتدائي'],
   [16.6,18.6,'إلى البكالوريا'],
   [18.75,21.0,'وفي مختلف المواد'],
-  [21.5,23.6,'حضوريًا أو عبر الإنترنت'],
-  [23.75,25.75,'حسب راحتك'],
+  [21.5,23.6,'في بيئة محفزة'],
+  [23.75,25.75,'هنا في خنشلة'],
   [26.6,28.5,'سجّل الآن'],
   [28.65,32.5,'معًا نحو مستقبل أفضل'],
 ];
@@ -202,7 +202,7 @@ SUBS.forEach((s,i)=>{ const d=document.createElement('div'); d.className='pill';
   $('sub').appendChild(d); });
 
 /* footage for "in person" */
-const TOPCLIP=['c5',67,21.45];
+const TOPCLIP=['c4',52,21.45];
 
 /* ---------------- seek ---------------- */
 async function seek(t){
@@ -295,16 +295,16 @@ async function seek(t){
     let x=PCX+total/2; items.forEach((e,k)=>{ x-=ws[k]; const idx=rw*4+k; const g=spring(t-(SJ0+idx*0.11),2.2,.5); const out=eInCubic(prog(t,21.15+idx*0.02,0.25));
       e.style.left=x+'px'; e.style.top=rowsY[rw]+'px'; e.style.transform=`translateY(${(1-clamp(g))*40}px) scale(${(0.6+0.4*g)*(1-out)})`; vis(e,t>=SJ0+idx*0.11 && t<21.45); x-=18; }); });
 
-  /* S4 in person / online */
+  /* S4 Khenchela classroom (the online card stays hidden: classes are in person only) */
   const s4on=t>=21.25 && t<26.0;
-  vis($('top'),s4on); vis($('bot'),t>=21.75 && t<26.0); vis($('orc'),t>=22.4 && t<26.0); vis($('rings'),s4on);
+  vis($('top'),s4on); vis($('bot'),false); vis($('orc'),t>=23.75 && t<26.0); vis($('rings'),s4on);
   if(s4on){
     setRect($('top'),P,prad);
     const pad=14; const tin=$('topin'); setRect(tin,[pad,pad,P[2]-2*pad,P[3]-2*pad],Math.max(prad-pad,0));
     let fi=Math.min(TOPCLIP[1],Math.floor(Math.max(0,t-TOPCLIP[2])*30)+1);
     const src=`assets/foot/${TOPCLIP[0]}/${String(fi).padStart(3,'0')}.jpg`; const ti=$('topimg'); if(ti.getAttribute('src')!==src) ti.setAttribute('src',src); wait.push(ti);
-    const rv=eInOutQuint(prog(t,21.45,0.55)); ti.style.clipPath=`circle(${lerp(0,900,rv)}px at 50% 50%)`;
-    rise($('tl'),t,21.9,0.6,1.2);
+    const rv=eInOutQuint(prog(t,21.45,0.55)); ti.style.clipPath=`circle(${lerp(0,900,rv)}px at 50% 50%)`; ti.style.transform=`scale(${1+0.12*eInOut(prog(t,21.45,4.4))})`;
+    rise($('tl'),t,23.8,0.6,1.2);
     // bottom card pops
     const g=spring(t-21.75,1.8,.55); setRect($('bot'),BOTR,48); $('bot').style.transform=`translateY(${(1-clamp(g))*70}px) scale(${0.75+0.25*g})`;
     setRect($('botin'),[14,14,BOTR[2]-28,BOTR[3]-28],34);
@@ -319,9 +319,9 @@ async function seek(t){
     rT.setAttribute('x',P[0]+ins); rT.setAttribute('y',P[1]+ins); rT.setAttribute('width',Math.max(1,P[2]-2*ins)); rT.setAttribute('height',Math.max(1,P[3]-2*ins)); rT.setAttribute('rx',Math.max(prad-ins,0));
     const gb=0.75+0.25*g, bw=BOTR[2]*gb, bh=BOTR[3]*gb, bx=BOTR[0]+BOTR[2]/2-bw/2, by=BOTR[1]+BOTR[3]/2-bh/2+(1-clamp(g))*70;
     rB.setAttribute('x',bx+ins); rB.setAttribute('y',by+ins); rB.setAttribute('width',Math.max(1,bw-2*ins)); rB.setAttribute('height',Math.max(1,bh-2*ins)); rB.setAttribute('rx',22);
-    vis(rB,t>=21.75);
+    vis(rB,false);
     // "or" medallion
-    const og=spring(t-22.4,2.0,.45); $('orc').style.transform=`translate(${ORC[0]-62}px,${ORC[1]-62}px) scale(${og})`;
+    const og=spring(t-23.75,2.0,.45); $('orc').style.transform=`translate(${ORC[0]-62}px,${ORC[1]-62}px) scale(${og})`;
   }
 
   /* S5 */

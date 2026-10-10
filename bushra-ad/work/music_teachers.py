@@ -205,10 +205,8 @@ for i, n in enumerate(['D6', 'E6', 'F#6', 'A6']):
     fx(18.75 + i * 0.22, pluck(hz(n), 0.6, 0.35), 0.7, -0.3 + 0.2 * i)  # subjects
 fx(21.1, whoosh(0.6, 3000, 600, 0.75, 0.55), 1.0, 0)                 # panel becomes the classroom
 fx(21.45, whoosh(0.5, 1200, 5000, 0.45, 0.45), 1.0, 0.2, 0.45)       # footage opens
-fx(21.75, pluck(hz('A5'), 0.8, 0.6), 0.8, -0.2)                      # online card
-fx(22.4, bell(hz('D6'), 1.8, 0.8), 0.9); fx(22.4, bell(hz('A5'), 1.8, 0.5), 0.9)   # "or"
-fx(22.7, pluck(hz('F#6'), 0.6, 0.4), 0.7, 0.3)                       # crest on screen
-fx(23.15, pluck(hz('A6'), 0.5, 0.35), 0.7, -0.3)                     # LIVE
+fx(23.75, bell(hz('D6'), 1.8, 0.8), 0.9); fx(23.75, bell(hz('A5'), 1.8, 0.5), 0.9)   # Khenchela pin
+fx(23.85, pluck(hz('A6'), 0.6, 0.4), 0.7, -0.3)                     # Khenchela chip
 fx(25.0, whoosh(0.66, 300, 4500, 0.95, 1.0), 1.0, 0, 0.3)            # riser
 fx(25.625, boom(0.9), 1.0, 0, 0.15); fx(25.64, wash(2.6, 1.0), 1.0, 0, 0.6)
 fx(26.0, whoosh(0.6, 3500, 600, 0.3, 0.5), 1.0, 0)

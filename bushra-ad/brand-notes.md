@@ -41,7 +41,7 @@ Schedule subject colors (pastel cards with a darker left border):
 
 **لماذا بشرى؟** (Why Bushra?) Sub: لأننا نؤمن أن كل طالب يستحق فرصة حقيقية للنجاح
 - بيئة محفزة: أجواء إيجابية وداعمة لتحقيق أهدافك
-- دروس بمرونة: حضوريا أو عبر الإنترنت حسب راحتك
+- دروس بمرونة: حضوريا أو عبر الإنترنت حسب راحتك  ← **wrong: the client says classes are not online. Never use this claim (the website should be fixed too).**
 - متابعة مستمرة: تقارير دورية واختبارات تقييم
 - برامج منظمة: تغطي جميع المستويات وتناسب احتياجاتك
 - أساتذة مختصون: ذوو خبرة في التعليم ومتابعة فردية للطلاب
@@ -64,7 +64,7 @@ Schedule subject colors (pastel cards with a darker left border):
 - Sample real sessions: رياضيات 4 متوسط group 1 · 4AM · 08:00–09:30 · غرفة 5; الفيزياء 4 متوسط · 4AM · 17:00–18:30 · غرفة 3; فرنسية مستوى A1 بين 11 و 14 سنة · 17:00–18:30 · غرفة 1; علوم 3 ثانوي · 3AS · 14:00–15:30 · غرفة 5
 
 ## Real, usable ad claims (do not invent others)
-From primary to the Baccalaureate · BEM / Bac prep · in person or online · free intro courses · specialist teachers with individual follow-up · regular reports and tests · 8 subjects plus 4 languages · 67 weekly sessions · Khenchela
+From primary to the Baccalaureate · BEM / Bac prep · free intro courses · specialist teachers with individual follow-up · regular reports and tests · 8 subjects plus 4 languages · 67 weekly sessions · Khenchela
 
 ## Site issues noticed (do not show them in the ad; tell the owner)
 - Legend chip "Physics" is in English; every other chip is Arabic (should be فيزياء)

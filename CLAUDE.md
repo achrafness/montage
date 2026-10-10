@@ -69,6 +69,7 @@ python3 build.py all school         # -> bushra-ad/school/bushra-school.mp4 (who
 - **The teacher photos must never appear in the language ad.** Those teachers do not teach the language-level course.
 - The teacher cards carry no names or subjects until the client supplies them, in photo order:
   Arabic-board teacher, grey blazer, maths teacher (Fahd, shown on his own poster), glasses, white polo, lab coat, hat.
+- **Classes are in person only, never online.** The website's "دروس بمرونة: حضوريًا أو عبر الإنترنت" card is wrong; never show or say "online" / "عبر الإنترنت".
 - Use only claims from the client or their website. Never invent numbers, testimonials or "limited places".
 - Keep children and watermarks out of crops.
 - The client records the voice-over themselves. Mix it over `bed_for_voice.wav` and re-time `SUBS` to the recording.

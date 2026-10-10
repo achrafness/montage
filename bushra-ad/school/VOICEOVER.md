@@ -14,8 +14,8 @@ Total: 32.5 s. `bed_for_voice.wav` is the music with room left for your voice.
 | 7 | 14.20 – 16.45 | أساتذة مختصون | Specialist teachers |
 | 8 | 16.60 – 18.60 | ومتابعة مستمرة | and continuous follow-up |
 | 9 | 18.75 – 21.00 | في بيئة محفزة | in a motivating environment |
-| 10 | 21.50 – 23.60 | حضوريًا أو عبر الإنترنت | In person or online |
-| 11 | 23.75 – 25.75 | ودورات مجانية تعريفية | and free introductory courses |
+| 10 | 21.50 – 23.60 | ودورات مجانية تعريفية | and free introductory courses |
+| 11 | 23.75 – 25.75 | هنا في خنشلة | right here in Khenchela |
 | 12 | 26.60 – 28.50 | مدرسة بشرى تفتح أبوابها | Bushra's School opens its doors |
 | 13 | 28.65 – 32.40 | معًا نحو مستقبل أفضل | Together towards a better future |
 

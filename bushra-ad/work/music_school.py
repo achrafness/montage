@@ -210,14 +210,12 @@ for t in [14.3, 16.7, 18.85]:
     fx(t, pluck(hz('A6'), 0.5, 0.35), 0.7, -0.3)                     # chips
 for t in [16.4, 18.6, 19.9]:
     fx(t, whoosh(0.5, 1200, 5000, 0.4, 0.45), 1.0, 0.2, 0.45)        # footage reveals
-fx(21.1, whoosh(0.6, 3000, 600, 0.75, 0.55), 1.0, 0)                 # window becomes the in-person card
+fx(21.1, whoosh(0.6, 3000, 600, 0.75, 0.55), 1.0, 0)                 # window settles into the Khenchela card
 fx(21.45, whoosh(0.5, 1200, 5000, 0.45, 0.45), 1.0, 0.2, 0.45)
-fx(21.75, pluck(hz('A5'), 0.8, 0.6), 0.8, -0.2)                      # online card
-fx(22.4, bell(hz('D6'), 1.8, 0.8), 0.9); fx(22.4, bell(hz('A5'), 1.8, 0.5), 0.9)   # "or"
-fx(22.7, pluck(hz('F#6'), 0.6, 0.4), 0.7, 0.3)
-fx(23.15, pluck(hz('A6'), 0.5, 0.35), 0.7, -0.3)
+fx(21.9, bell(hz('D6'), 1.8, 0.8), 0.9); fx(21.9, bell(hz('A5'), 1.8, 0.5), 0.9)   # gold pill pops
+fx(23.8, pluck(hz('A6'), 0.6, 0.4), 0.7, -0.3)                      # Khenchela chip
 for n in ['D6', 'A6', 'F#6']:
-    fx(23.95, bell(hz(n), 2.2, 0.7), 0.85, 0)                        # free intro courses
+    fx(22.3, bell(hz(n), 2.2, 0.7), 0.85, 0)                         # free intro courses
 fx(25.0, whoosh(0.66, 300, 4500, 0.95, 1.0), 1.0, 0, 0.3)
 fx(25.625, boom(0.9), 1.0, 0, 0.15); fx(25.64, wash(2.6, 1.0), 1.0, 0, 0.6)
 fx(26.0, whoosh(0.6, 3500, 600, 0.3, 0.5), 1.0, 0)
